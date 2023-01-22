@@ -760,8 +760,8 @@ video {
   height: 1rem;
 }
 
-.h-\[50vh\] {
-  height: 50vh;
+.h-\[42vh\] {
+  height: 42vh;
 }
 
 .h-\[1px\] {
@@ -802,14 +802,6 @@ video {
 
 .h-\[8rem\] {
   height: 8rem;
-}
-
-.h-\[40vh\] {
-  height: 40vh;
-}
-
-.h-\[45vh\] {
-  height: 45vh;
 }
 
 .max-h-\[500px\] {
@@ -2422,8 +2414,8 @@ main:hover .swiper-pagination {
     margin-top: 1.5rem;
   }
 
-  .sm\:h-\[60vh\] {
-    height: 60vh;
+  .sm\:h-\[55vh\] {
+    height: 55vh;
   }
 
   .sm\:w-80 {
