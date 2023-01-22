@@ -804,6 +804,14 @@ video {
   height: 8rem;
 }
 
+.h-\[40vh\] {
+  height: 40vh;
+}
+
+.h-\[45vh\] {
+  height: 45vh;
+}
+
 .max-h-\[500px\] {
   max-height: 500px;
 }
