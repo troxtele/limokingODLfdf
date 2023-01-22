@@ -39,6 +39,8 @@ img {
   @apply opacity-100;
 }
 
+/* Car slider section */
+
 .left_0 {
   @apply left-0;
 }
