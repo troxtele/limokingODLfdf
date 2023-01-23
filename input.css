@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .active_link {
-  @apply border-default-color;
+  @apply border-default-color text-white;
 }
 
 .h_16 {
