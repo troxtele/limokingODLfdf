@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Fonts -->
-    <link rel=stylesheet
-    href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
-    type=text/css media=all>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Montserrat Font -->
@@ -24,6 +21,13 @@
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
+
+    <!-- Hind Font -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=hind:300,400,500,600,700"
+      rel="stylesheet"
+    />
     <!-- Font awesome -->
     <link
       rel="stylesheet"
@@ -64,7 +68,7 @@
             <div
               class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
             >
-              <a href="#">
+              <a href="./index.html">
                 <img
                   class="max-w-[12rem]"
                   src="./images/header/logo.png"
@@ -111,7 +115,7 @@
                     x-on:click="active = 'home'"
                     x-bind:class="active === 'home' ? 'active_link': '' "
                     href="index.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >home</a
                   >
                 </li>
@@ -121,7 +125,7 @@
                     x-on:click="active = 'about'"
                     x-bind:class="active === 'about' ? 'active_link': '' "
                     href="about.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >pages</a
                   >
                   <!-- Sub menu -->
@@ -199,7 +203,7 @@
                     x-on:click="active = 'ourFeet'"
                     x-bind:class="active === 'ourFeet' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >our fleet</a
                   >
                   <!-- Sub menu -->
@@ -237,7 +241,7 @@
                     <li>
                       <a
                         href="#"
-                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20 uppercase"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20 capitalize"
                         >Fleet Modern 3 Columns</a
                       >
                     </li>
@@ -256,7 +260,7 @@
                     x-on:click="active = 'serivce'"
                     x-bind:class="active === 'service' ? 'active_link': '' "
                     href="./rate.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >service rate</a
                   >
                 </li>
@@ -266,7 +270,7 @@
                     x-on:click="active = 'portfolio'"
                     x-bind:class="active === 'portfolio' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >portfolio</a
                   >
                   <!-- Sub menu -->
@@ -400,7 +404,7 @@
                     x-on:click="active = 'blog'"
                     x-bind:class="active === 'blog' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >blog</a
                   >
                   <!-- Sub menu -->
@@ -1224,130 +1228,139 @@
         <div class="hidden large_content md:grid gap-4 grid-cols-4">
           <!-- Cars -->
           <div class="cars mt-32 col-span-1">
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-11.jpg"
                 alt="car-11"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   BLACK LINCOLN MKT
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-21.jpg"
                 alt="car-11"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   BLACK LINCOLN SEDAN
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-31.jpg"
                 alt="car-11"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   MERCEDES GRAND SEDAN
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-41.jpg"
                 alt="car-11"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   MERCEDES GRAND SEDAN
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-51.jpg"
                 alt="car-51"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   MERCEDES GRAND SEDAN
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-61.jpg"
                 alt="car-61"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   LINCOLN STRETCH LIMO
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-71.jpg"
                 alt="car-71"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   LINCOLN STRETCH LIMO
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-81.jpg"
                 alt="car-81"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   FORD PARTY BUS LIMO
-                </h4>
+                </a>
               </div>
             </div>
-            <div
-              class="car h-[5.813rem] flex gap-4 justify-center items-center"
-            >
+            <div class="car h-[5.813rem] flex gap-4 items-center">
               <img
                 class="max-w-[6rem] w-full animated wow fadeIn"
                 src="./images/cars/car-91.jpg"
                 alt="car-91"
               />
               <div class="name">
-                <h4 class="uppercase font-semibold text-sm text-start">
+                <a
+                  href="#"
+                  class="uppercase flex font-bold text-[0.8rem] text-[#545454] text-start font-monster"
+                >
                   MERCEDES PARTY LIMO
-                </h4>
+                </a>
               </div>
             </div>
           </div>
@@ -1359,7 +1372,9 @@
               <div
                 class="title flex flex-col gap-1 items-center h-32 bg-default-color polygon"
               >
-                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
+                <h3
+                  class="uppercase font-monster font-bold text-base text-slate-50 pt-6"
+                >
                   per hour rate
                 </h3>
                 <span class="text-sm text-slate-50">eg. Event, Party</span>
@@ -1484,7 +1499,7 @@
               <!-- Book btn -->
               <a href="#" class="">
                 <button
-                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-base font-semibold"
                 >
                   book now
                 </button>
@@ -1495,7 +1510,9 @@
               <div
                 class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
               >
-                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
+                <h3
+                  class="uppercase font-monster font-bold text-base text-slate-50 pt-6"
+                >
                   per day rate
                 </h3>
                 <span class="text-sm text-stone-400"
@@ -1631,7 +1648,7 @@
               <!-- Book btn -->
               <a href="#" class="">
                 <button
-                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-base font-semibold"
                 >
                   book now
                 </button>
@@ -1642,7 +1659,9 @@
               <div
                 class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
               >
-                <h3 class="uppercase font-semibold text-lg text-slate-50 pt-4">
+                <h3
+                  class="uppercase font-monster font-bold text-base text-slate-50 pt-6"
+                >
                   AIRPORT TRANSFER
                 </h3>
                 <span class="text-sm text-stone-400">*Flat Rate</span>
@@ -1766,7 +1785,7 @@
               <!-- Book btn -->
               <a href="#" class="">
                 <button
-                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                  class="bg-default-color uppercase w-full py-4 text-slate-50 text-base font-semibold"
                 >
                   book now
                 </button>
@@ -1781,14 +1800,14 @@
             <!-- cars -->
             <div class="car_rate_wrapper">
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-x-2">
+              <div class="grid grid-cols-2 gap-x-6">
                 <!-- Title -->
                 <div class="title_wrapper col-start-2 col-end-3 bg-[#f5f5f5]">
                   <div
-                    class="title px-2 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-color polygon"
+                    class="title px-2 flex flex-col gap-1 items-center h-[9.4rem] xs:h-32 bg-default-color polygon"
                   >
                     <h3
-                      class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                      class="uppercase font-monster font-semibold text-sm xs:text-base sm:text-lg text-slate-50  pt-5 xs:pt-6"
                     >
                       per hour rate
                     </h3>
@@ -1806,7 +1825,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK LINCOLN MKT
                       </h4>
                     </a>
@@ -1832,7 +1853,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -1844,7 +1865,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK LINCOLN SEDAN
                       </h4>
                     </a>
@@ -1870,7 +1893,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -1882,7 +1905,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         MERCEDES GRAND SEDAN
                       </h4>
                     </a>
@@ -1908,7 +1933,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -1920,7 +1945,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK CADILLAC SEDAN
                       </h4>
                     </a>
@@ -1946,7 +1973,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -1958,7 +1985,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         CADILLAC ESCALADE LIMO
                       </h4>
                     </a>
@@ -1984,7 +2013,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -1996,7 +2025,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         LINCOLN STRETCH LIMO
                       </h4>
                     </a>
@@ -2022,7 +2053,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2034,7 +2065,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         HUMMER STRECTH LIMO
                       </h4>
                     </a>
@@ -2060,7 +2093,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2072,7 +2105,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         FORD PARTY BUS LIMO
                       </h4>
                     </a>
@@ -2099,7 +2134,7 @@
               </div>
               <!-- Last item with button -->
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-x-2">
+              <div class="grid grid-cols-2 gap-x-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2111,7 +2146,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         MERCEDES PARTY LIMO
                       </h4>
                     </a>
@@ -2138,7 +2175,7 @@
                 <!-- Book btn -->
                 <a href="#" class="col-start-2 col-end-3">
                   <button
-                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-base font-semibold"
                   >
                     book now
                   </button>
@@ -2151,14 +2188,14 @@
             <!-- cars -->
             <div class="car_rate_wrapper">
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-x-2">
+              <div class="grid grid-cols-2 gap-x-6">
                 <!-- Title -->
                 <div class="title_wrapper col-start-2 col-end-3 bg-[#f5f5f5]">
                   <div
-                    class="title px-2 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-black polygon"
+                    class="title px-2 flex flex-col gap-1 items-center h-[9.4rem] xs:h-32 bg-default-black polygon"
                   >
                     <h3
-                      class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                      class="uppercase font-monster font-semibold text-sm xs:text-base sm:text-lg text-slate-50  pt-5 xs:pt-6"
                     >
                       per day rate
                     </h3>
@@ -2178,7 +2215,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK LINCOLN MKT
                       </h4>
                     </a>
@@ -2204,7 +2243,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2216,7 +2255,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK LINCOLN SEDAN
                       </h4>
                     </a>
@@ -2242,7 +2283,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2254,7 +2295,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         MERCEDES GRAND SEDAN
                       </h4>
                     </a>
@@ -2280,7 +2323,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2292,7 +2335,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK CADILLAC SEDAN
                       </h4>
                     </a>
@@ -2318,7 +2363,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2330,7 +2375,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         CADILLAC ESCALADE LIMO
                       </h4>
                     </a>
@@ -2356,7 +2403,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2368,7 +2415,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         LINCOLN STRETCH LIMO
                       </h4>
                     </a>
@@ -2394,7 +2443,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2406,7 +2455,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         HUMMER STRECTH LIMO
                       </h4>
                     </a>
@@ -2427,7 +2478,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2439,7 +2490,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         FORD PARTY BUS LIMO
                       </h4>
                     </a>
@@ -2466,7 +2519,7 @@
               </div>
               <!-- Last item with button -->
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-x-2">
+              <div class="grid grid-cols-2 gap-x-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2478,7 +2531,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         MERCEDES PARTY LIMO
                       </h4>
                     </a>
@@ -2505,7 +2560,7 @@
                 <!-- Book btn -->
                 <a href="#" class="col-start-2 col-end-3">
                   <button
-                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-base font-semibold"
                   >
                     book now
                   </button>
@@ -2518,14 +2573,14 @@
             <!-- cars -->
             <div class="car_rate_wrapper">
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-x-2">
+              <div class="grid grid-cols-2 gap-x-6">
                 <!-- Title -->
                 <div class="title_wrapper col-start-2 col-end-3 bg-[#f5f5f5]">
                   <div
-                    class="title px-2 flex flex-col gap-1 items-center h-[8rem] xs:h-32 bg-default-black polygon"
+                    class="title px-2 flex flex-col gap-1 items-center h-[9.4rem] xs:h-32 bg-default-black polygon"
                   >
                     <h3
-                      class="uppercase font-semibold text-md sm:text-lg text-slate-50 pt-3 xs:pt-4"
+                      class="uppercase font-monster font-semibold text-sm xs:text-base sm:text-lg text-slate-50  pt-5 xs:pt-6"
                     >
                       AIRPORT TRANSFER
                     </h3>
@@ -2543,7 +2598,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK LINCOLN MKT
                       </h4>
                     </a>
@@ -2566,7 +2623,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2578,7 +2635,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK LINCOLN SEDAN
                       </h4>
                     </a>
@@ -2601,7 +2660,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2613,7 +2672,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         MERCEDES GRAND SEDAN
                       </h4>
                     </a>
@@ -2636,7 +2697,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2648,7 +2709,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         BLACK CADILLAC SEDAN
                       </h4>
                     </a>
@@ -2671,7 +2734,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2683,7 +2746,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         CADILLAC ESCALADE LIMO
                       </h4>
                     </a>
@@ -2706,7 +2771,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2718,7 +2783,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         LINCOLN STRETCH LIMO
                       </h4>
                     </a>
@@ -2739,7 +2806,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2751,7 +2818,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         HUMMER STRECTH LIMO
                       </h4>
                     </a>
@@ -2774,7 +2843,7 @@
                 </div>
               </div>
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2786,7 +2855,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         FORD PARTY BUS LIMO
                       </h4>
                     </a>
@@ -2808,7 +2879,7 @@
               </div>
               <!-- Last item with button -->
               <!-- car&rate -->
-              <div class="grid grid-cols-2 gap-x-2">
+              <div class="grid grid-cols-2 gap-x-6">
                 <!-- car -->
                 <div
                   class="car flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center items-center"
@@ -2820,7 +2891,9 @@
                   />
                   <div class="name">
                     <a href="#">
-                      <h4 class="uppercase font-semibold text-sm xs:text-base">
+                      <h4
+                        class="uppercase font-semibold text-sm font-monster"
+                      >
                         MERCEDES PARTY LIMO
                       </h4>
                     </a>
@@ -2844,7 +2917,7 @@
                 <!-- Book btn -->
                 <a href="#" class="col-start-2 col-end-3">
                   <button
-                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-md"
+                    class="bg-default-color uppercase w-full py-4 text-slate-50 text-base font-semibold"
                   >
                     book now
                   </button>
