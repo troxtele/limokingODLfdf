@@ -32,15 +32,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Swiper Slider -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-    <!-- AOS animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AnimeJs -->
+    <link rel="stylesheet" href="./css/animate.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
 
@@ -71,7 +64,7 @@
             <div
               class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
             >
-              <a href="./index.html">
+              <a href="#">
                 <img
                   class="max-w-[12rem]"
                   src="./images/header/logo.png"
@@ -83,7 +76,7 @@
             <div
               class="contact-info w-full flex flex-col sm:flex-row md:flex-col gap:2 sm:gap-6 justify-center md:justify-between items-center md:items-end md:col-span-1"
             >
-              <div class="number flex items-center gap-4">
+              <div class="number flex justify-center items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
                 <span>(1)-212-333-4343</span>
               </div>
@@ -106,8 +99,8 @@
     >
       <!-- Large Screen -->
       <div class="nav_large hidden md:block transition-all duration-500">
-        <div class="container flex justify-end">
-          <div class="flex gap-[7.74rem] lg:gap-56 pt-5 text-zinc-300">
+        <div class="container flex justify-center lg:justify-end">
+          <div class="flex lg:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
               <ul
                 x-data="{active: 'service'}"
@@ -137,14 +130,14 @@
                   >
                     <li>
                       <a
-                        href="#"
+                        href="./about.html"
                         class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
                         >About us</a
                       >
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="./about.html"
                         class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
                         >About us 2</a
                       >
@@ -278,7 +271,7 @@
                   >
                   <!-- Sub menu -->
                   <div
-                    class="submenu capitalize p-6 absolute top-full -right-[206%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                    class="submenu capitalize p-6 absolute top-full -right-[154%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
                   >
                     <!-- Lists -->
                     <div class="lists_container flex">
@@ -412,7 +405,7 @@
                   >
                   <!-- Sub menu -->
                   <div
-                    class="submenu capitalize p-6 absolute top-full -right-[200%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                    class="submenu capitalize p-6 absolute top-full -right-[130%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
                   >
                     <!-- Lists -->
                     <div class="lists_container flex">
@@ -496,7 +489,10 @@
               </ul>
             </div>
             <!-- Search Button -->
-            <div x-data="{ open: false }" class="search relative z-50">
+            <div
+              x-data="{ open: false }"
+              class="search hidden lg:inline-block relative z-50"
+            >
               <button x-on:click="open = !open" class="search_button">
                 <img
                   class="max-w-[1.3rem]"
@@ -1213,7 +1209,7 @@
         class="wrapper bg-rate-main-bg bg-center bg-cover bg-no-repeat -mt-[61px] pt-[8rem] pb-[4.5rem]"
       >
         <div class="container text-center h-full">
-          <h1 class="h-full capitalize font-semibold text-4xl md:text-6xl">
+          <h1 class="h-full capitalize font-semibold text-5xl sm:text-6xl">
             service rate
           </h1>
         </div>
@@ -1232,7 +1228,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-11.jpg"
                 alt="car-11"
               />
@@ -1246,7 +1242,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-21.jpg"
                 alt="car-11"
               />
@@ -1260,7 +1256,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-31.jpg"
                 alt="car-11"
               />
@@ -1274,7 +1270,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-41.jpg"
                 alt="car-11"
               />
@@ -1288,7 +1284,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-51.jpg"
                 alt="car-51"
               />
@@ -1302,7 +1298,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-61.jpg"
                 alt="car-61"
               />
@@ -1316,7 +1312,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-71.jpg"
                 alt="car-71"
               />
@@ -1330,7 +1326,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-81.jpg"
                 alt="car-81"
               />
@@ -1344,7 +1340,7 @@
               class="car h-[5.813rem] flex gap-4 justify-center items-center"
             >
               <img
-                class="max-w-[4.9rem]"
+                class="max-w-[4.9rem] animated wow fadeIn"
                 src="./images/cars/car-91.jpg"
                 alt="car-91"
               />
@@ -1358,7 +1354,7 @@
 
           <!-- Pricing -->
           <div class="pricing grid grid-cols-3 gap-1 col-span-3">
-            <div class="item_1">
+            <div class="item_1 bg-[#f5f5f5]">
               <!-- Title -->
               <div
                 class="title flex flex-col gap-1 items-center h-32 bg-default-color polygon"
@@ -1494,7 +1490,7 @@
                 </button>
               </a>
             </div>
-            <div class="item_2">
+            <div class="item_2 bg-[#f5f5f5]">
               <!-- Title -->
               <div
                 class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
@@ -1641,7 +1637,7 @@
                 </button>
               </a>
             </div>
-            <div class="item_3">
+            <div class="item_3 bg-[#f5f5f5]">
               <!-- Title -->
               <div
                 class="title flex flex-col gap-1 items-center h-32 bg-default-black polygon"
@@ -1780,7 +1776,7 @@
         </div>
         <!-- Small Screen Content -->
         <div class="md:hidden small_cotent grid gap-10 text-center">
-          <div class="item_1 flex flex-col gap-6">
+          <div class="item_1 flex flex-col gap-6 bg-[#f5f5f5]">
             <!-- Cars ** & Rates ** -->
             <!-- cars -->
             <div class="car_rate_wrapper">
@@ -1802,7 +1798,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-11.jpg"
                     alt="car-11"
                   />
@@ -1840,7 +1836,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-21.jpg"
                     alt="car-21"
                   />
@@ -1878,7 +1874,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-31.jpg"
                     alt="car-31"
                   />
@@ -1916,7 +1912,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-41.jpg"
                     alt="car-41"
                   />
@@ -1954,7 +1950,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-51.jpg"
                     alt="car-51"
                   />
@@ -1992,7 +1988,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-61.jpg"
                     alt="car-61"
                   />
@@ -2030,7 +2026,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-71.jpg"
                     alt="car-71"
                   />
@@ -2068,7 +2064,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-81.jpg"
                     alt="car-81"
                   />
@@ -2107,7 +2103,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-91.jpg"
                     alt="car-91"
                   />
@@ -2148,7 +2144,7 @@
               </div>
             </div>
           </div>
-          <div class="item_2 flex flex-col items-end gap-6">
+          <div class="item_2 flex flex-col gap-6 bg-[#f5f5f5]">
             <!-- Cars ** & Rates ** -->
             <!-- cars -->
             <div class="car_rate_wrapper">
@@ -2172,7 +2168,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-11.jpg"
                     alt="car-11"
                   />
@@ -2210,7 +2206,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-21.jpg"
                     alt="car-21"
                   />
@@ -2248,7 +2244,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-31.jpg"
                     alt="car-31"
                   />
@@ -2286,7 +2282,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-41.jpg"
                     alt="car-41"
                   />
@@ -2324,7 +2320,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-51.jpg"
                     alt="car-51"
                   />
@@ -2362,7 +2358,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-61.jpg"
                     alt="car-61"
                   />
@@ -2400,7 +2396,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-71.jpg"
                     alt="car-71"
                   />
@@ -2433,7 +2429,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-81.jpg"
                     alt="car-81"
                   />
@@ -2472,7 +2468,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-91.jpg"
                     alt="car-91"
                   />
@@ -2513,7 +2509,7 @@
               </div>
             </div>
           </div>
-          <div class="item_3 flex flex-col items-end gap-6">
+          <div class="item_3 flex flex-col gap-6 bg-[#f5f5f5]">
             <!-- Cars ** & Rates ** -->
             <!-- cars -->
             <div class="car_rate_wrapper">
@@ -2535,7 +2531,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-11.jpg"
                     alt="car-11"
                   />
@@ -2570,7 +2566,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-21.jpg"
                     alt="car-21"
                   />
@@ -2605,7 +2601,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-31.jpg"
                     alt="car-31"
                   />
@@ -2640,7 +2636,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-41.jpg"
                     alt="car-41"
                   />
@@ -2675,7 +2671,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-51.jpg"
                     alt="car-51"
                   />
@@ -2710,7 +2706,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-61.jpg"
                     alt="car-61"
                   />
@@ -2743,7 +2739,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-71.jpg"
                     alt="car-71"
                   />
@@ -2778,7 +2774,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-81.jpg"
                     alt="car-81"
                   />
@@ -2812,7 +2808,7 @@
                   class="car flex flex-col xs:flex-row gap-2 sm:gap-4 justify-center items-center"
                 >
                   <img
-                    class="max-w-[5rem]"
+                    class="max-w-[5rem] animated wow fadeIn"
                     src="./images/cars/car-91.jpg"
                     alt="car-91"
                   />
@@ -2856,7 +2852,7 @@
     <!----------------------------------------->
     <!-----Experience Section ----->
     <!----------------------------------------->
-    <section class="experience py-6 pb-0">
+    <section class="experience py-0">
       <div class="about_top bg-about-bg bg-no-repeat bg-cover bg-center py-20">
         <div class="container">
           <div class="content">
@@ -3099,6 +3095,12 @@
       x-bind:class="navOpen ? 'bg-black/70  visible backdrop-blur-md' : 'invisible backdrop-blur-0'"
       class="overlay absolute inset-0 transition-all duration-500 z-40"
     ></div>
+    <!-- wow js -->
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Main Js -->
     <script src="./js/script.js"></script>
   </body>
 </html>

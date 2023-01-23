@@ -39,6 +39,8 @@
     />
     <!-- AOS animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AnimeJs -->
+    <link rel="stylesheet" href="./css/animate.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
 
@@ -81,7 +83,7 @@
             <div
               class="contact-info w-full flex flex-col sm:flex-row md:flex-col gap:2 sm:gap-6 justify-center md:justify-between items-center md:items-end md:col-span-1"
             >
-              <div class="number flex items-center gap-4">
+              <div class="number flex justify-center items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
                 <span>(1)-212-333-4343</span>
               </div>
@@ -104,8 +106,8 @@
     >
       <!-- Large Screen -->
       <div class="nav_large hidden md:block transition-all duration-500">
-        <div class="container flex justify-end">
-          <div class="flex gap-[7.74rem] lg:gap-56 pt-5 text-zinc-300">
+        <div class="container flex justify-center lg:justify-end">
+          <div class="flex lg:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
               <ul
                 x-data="{active: 'home'}"
@@ -135,14 +137,14 @@
                   >
                     <li>
                       <a
-                        href="#"
+                        href="./about.html"
                         class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
                         >About us</a
                       >
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="./about.html"
                         class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
                         >About us 2</a
                       >
@@ -276,7 +278,7 @@
                   >
                   <!-- Sub menu -->
                   <div
-                    class="submenu capitalize p-6 absolute top-full -right-[206%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                    class="submenu capitalize p-6 absolute top-full -right-[154%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
                   >
                     <!-- Lists -->
                     <div class="lists_container flex">
@@ -410,7 +412,7 @@
                   >
                   <!-- Sub menu -->
                   <div
-                    class="submenu capitalize p-6 absolute top-full -right-[200%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                    class="submenu capitalize p-6 absolute top-full -right-[130%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
                   >
                     <!-- Lists -->
                     <div class="lists_container flex">
@@ -494,7 +496,10 @@
               </ul>
             </div>
             <!-- Search Button -->
-            <div x-data="{ open: false }" class="search relative z-50">
+            <div
+              x-data="{ open: false }"
+              class="search hidden lg:inline-block relative z-50"
+            >
               <button x-on:click="open = !open" class="search_button">
                 <img
                   class="max-w-[1.3rem]"
@@ -1660,10 +1665,7 @@
       <div class="about_bottom bg-default-color pt-6 md:pt-0">
         <div class="container">
           <div
-            data-aos="fade-up"
-            data-aos-easing="ease-in-sine"
-            data-aos-duration="1000"
-            class="content flex flex-col md:flex-row items-center justify-between gap-4"
+            class="content animated wow fadeInUp flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <h3 class="uppercase font-bold text-2xl text-center">
               what about pricing?
@@ -1692,7 +1694,7 @@
             class="content flex flex-col justify-center items-center text-center gap-4"
           >
             <h2
-              class="uppercase font-semibold text-3xl relative before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[115%] after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[115%]"
+              class="uppercase font-semibold text-3xl relative before:hidden sm:before:block before:absolute before:bg-slate-50 before:w-16 before:h-[1px] before:top-[50%] before:right-[115%] after:hidden sm:after:block after:absolute after:bg-slate-50 after:w-16 after:h-[1px] after:top-[50%] after:left-[115%]"
             >
               our services
             </h2>
@@ -1706,12 +1708,7 @@
           <div
             class="grid_items grid sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8"
           >
-            <div
-              data-aos="fade-up"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1000"
-              class="item flex gap-5"
-            >
+            <div class="item flex gap-5 animated wow fadeInUp">
               <div class="icon">
                 <img src="./images/service/service-icon-11.png" alt="icon" />
               </div>
@@ -1729,12 +1726,7 @@
                 >
               </div>
             </div>
-            <div
-              data-aos="fade-up"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1000"
-              class="item flex gap-5"
-            >
+            <div class="item flex gap-5 animated wow fadeInUp">
               <div class="icon">
                 <img src="./images/service/service-icon-21.png" alt="icon" />
               </div>
@@ -1752,12 +1744,7 @@
                 >
               </div>
             </div>
-            <div
-              data-aos="fade-up"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1000"
-              class="item flex gap-5"
-            >
+            <div class="item flex gap-5 animated wow fadeInUp">
               <div class="icon">
                 <img src="./images/service/service-icon-31.png" alt="icon" />
               </div>
@@ -1776,10 +1763,8 @@
               </div>
             </div>
             <div
-              data-aos="fade-up"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1000"
-              class="item flex gap-5"
+              data-wow-duration="1.2s"
+              class="item flex gap-5 animated wow fadeInUp"
             >
               <div class="icon">
                 <img src="./images/service/service-icon-41.png" alt="icon" />
@@ -1799,10 +1784,8 @@
               </div>
             </div>
             <div
-              data-aos="fade-up"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1000"
-              class="item flex gap-5"
+              data-wow-duration="1.2s"
+              class="item flex gap-5 animated wow fadeInUp"
             >
               <div class="icon">
                 <img src="./images/service/service-icon-51.png" alt="icon" />
@@ -1822,10 +1805,8 @@
               </div>
             </div>
             <div
-              data-aos="fade-up"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1000"
-              class="item flex gap-5"
+              data-wow-duration="1.2s"
+              class="item flex gap-5 animated wow fadeInUp"
             >
               <div class="icon">
                 <img src="./images/service/service-icon-61.png" alt="icon" />
@@ -1995,11 +1976,7 @@
             </div>
             <!-- Sider -->
             <div
-              data-aos="fade-right"
-              data-aos-offset="300"
-              data-aos-easing="ease-in-sine"
-              data-aos-duration="1000"
-              class="swiper testi_slider w-full h-full"
+              class="swiper testi_slider animated wow fadeInLeft w-full h-full"
             >
               <!-- Additional required wrapper -->
               <div class="swiper-wrapper">
@@ -2080,12 +2057,7 @@
               >
             </div>
             <div class="items grid gap-4">
-              <div
-                data-aos="fade-up"
-                data-aos-easing="ease-in-out"
-                data-aos-duration="800"
-                class="item flex gap-4"
-              >
+              <div class="item flex gap-4 animated wow fadeInUp">
                 <a
                   href="#"
                   class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
@@ -2109,12 +2081,7 @@
                   >
                 </div>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-easing="ease-in-out"
-                data-aos-duration="1000"
-                class="item flex gap-4"
-              >
+              <div class="item flex gap-4 animated wow fadeInUp">
                 <a
                   href="#"
                   class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
@@ -2138,12 +2105,7 @@
                   >
                 </div>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-easing="ease-in-out"
-                data-aos-duration="1200"
-                class="item flex gap-4"
-              >
+              <div class="item flex gap-4 animated wow fadeInUp">
                 <a
                   href="#"
                   class="transition-all before:transition-all relative before:absolute hover:before:bg-gray-900/30 before:inset-0"
@@ -2392,6 +2354,12 @@
       class="hidden left-0 bg-black/70 z-30 md:-z-10 animate-progress-90 animate-progress-95 animate-progress-100"
     ></div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- wow js -->
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
     <script>

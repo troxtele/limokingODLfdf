@@ -41,6 +41,8 @@
 
     <!-- AOS animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- AnimeJs -->
+    <link rel="stylesheet" href="./css/animate.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
 
@@ -71,7 +73,7 @@
             <div
               class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
             >
-              <a href="./index.html">
+              <a href="#">
                 <img
                   class="max-w-[12rem]"
                   src="./images/header/logo.png"
@@ -83,7 +85,7 @@
             <div
               class="contact-info w-full flex flex-col sm:flex-row md:flex-col gap:2 sm:gap-6 justify-center md:justify-between items-center md:items-end md:col-span-1"
             >
-              <div class="number flex items-center gap-4">
+              <div class="number flex justify-center items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
                 <span>(1)-212-333-4343</span>
               </div>
@@ -106,8 +108,8 @@
     >
       <!-- Large Screen -->
       <div class="nav_large hidden md:block transition-all duration-500">
-        <div class="container flex justify-end">
-          <div class="flex gap-[7.74rem] lg:gap-56 pt-5 text-zinc-300">
+        <div class="container flex justify-center lg:justify-end">
+          <div class="flex lg:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
               <ul
                 x-data="{active: 'about'}"
@@ -137,14 +139,14 @@
                   >
                     <li>
                       <a
-                        href="#"
+                        href="./about.html"
                         class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
                         >About us</a
                       >
                     </li>
                     <li>
                       <a
-                        href="#"
+                        href="./about.html"
                         class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
                         >About us 2</a
                       >
@@ -278,7 +280,7 @@
                   >
                   <!-- Sub menu -->
                   <div
-                    class="submenu capitalize p-6 absolute top-full -right-[206%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                    class="submenu capitalize p-6 absolute top-full -right-[154%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
                   >
                     <!-- Lists -->
                     <div class="lists_container flex">
@@ -412,7 +414,7 @@
                   >
                   <!-- Sub menu -->
                   <div
-                    class="submenu capitalize p-6 absolute top-full -right-[200%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                    class="submenu capitalize p-6 absolute top-full -right-[130%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
                   >
                     <!-- Lists -->
                     <div class="lists_container flex">
@@ -496,7 +498,10 @@
               </ul>
             </div>
             <!-- Search Button -->
-            <div x-data="{ open: false }" class="search relative z-50">
+            <div
+              x-data="{ open: false }"
+              class="search hidden lg:inline-block relative z-50"
+            >
               <button x-on:click="open = !open" class="search_button">
                 <img
                   class="max-w-[1.3rem]"
@@ -1212,7 +1217,7 @@
       class="cars bg-about-main-bg bg-cover bg-center bg-no-repeat h-[400px] text-slate-50 overflow-hidden -mt-[61px] flex items-end"
     >
       <div class="container">
-        <div class="cars_content flex flex-col items-center text-center">
+        <div class="cars_content flex flex-col items-center text-center mt-14">
           <div class="header">
             <h1 class="uppercase py-5 text-5xl font-bold">About limo king</h1>
           </div>
@@ -1230,7 +1235,7 @@
     <!----------------------------------------->
     <!----- Story Section ----->
     <!----------------------------------------->
-    <section>
+    <section class="bg-[#F3F3F3]">
       <div class="container">
         <div
           class="content text-stone-800 grid md:grid-cols-2 justify-center items-center gap-6"
@@ -1266,17 +1271,12 @@
     <!----------------------------------------->
     <!----- Service Section ----->
     <!----------------------------------------->
-    <div class="service_bottom py-14 text-gray-700">
+    <div class="service_bottom pt-6 py-14 text-gray-700">
       <div class="container">
         <div
           class="grid_items grid sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8"
         >
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
-          >
+          <div class="item flex gap-5 animated wow fadeInUp">
             <div class="icon">
               <img src="./images/service/service-icon-11.png" alt="icon" />
             </div>
@@ -1294,12 +1294,7 @@
               >
             </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
-          >
+          <div class="item flex gap-5 animated wow fadeInUp">
             <div class="icon">
               <img src="./images/service/service-icon-21.png" alt="icon" />
             </div>
@@ -1317,12 +1312,7 @@
               >
             </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
-          >
+          <div class="item flex gap-5 animated wow fadeInUp">
             <div class="icon">
               <img src="./images/service/service-icon-31.png" alt="icon" />
             </div>
@@ -1341,10 +1331,8 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
+            data-wow-duration="1.2s"
+            class="item flex gap-5 animated wow fadeInUp"
           >
             <div class="icon">
               <img src="./images/service/service-icon-41.png" alt="icon" />
@@ -1364,10 +1352,8 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
+            data-wow-duration="1.2s"
+            class="item flex gap-5 animated wow fadeInUp"
           >
             <div class="icon">
               <img src="./images/service/service-icon-51.png" alt="icon" />
@@ -1387,10 +1373,8 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
+            data-wow-duration="1.2s"
+            class="item flex gap-5 animated wow fadeInUp"
           >
             <div class="icon">
               <img src="./images/service/service-icon-61.png" alt="icon" />
@@ -1563,10 +1547,7 @@
       <div class="about bg-default-color pt-6 md:pt-0">
         <div class="container">
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="content flex flex-col md:flex-row items-center justify-between gap-4"
+            class="content animated wow fadeInUp flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <h3 class="uppercase font-bold text-2xl text-center">
               what about pricing?
@@ -1799,6 +1780,12 @@
     ></div>
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Wow JS -->
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Main JS -->
     <script src="./js/script.js"></script>
     <script src="./js/aboutPage.js"></script>
     <script>
