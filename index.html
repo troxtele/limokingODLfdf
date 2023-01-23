@@ -37,9 +37,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
-    <!-- AOS animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <!-- AnimeJs -->
+    <!-- Anime JS -->
     <link rel="stylesheet" href="./css/animate.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
@@ -127,7 +125,7 @@
                   <a
                     x-on:click="active = 'about'"
                     x-bind:class="active === 'about' ? 'active_link': '' "
-                    href="about.html"
+                    href="./about.html"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
                     >pages</a
                   >
@@ -262,7 +260,7 @@
                   <a
                     x-on:click="active = 'serivce'"
                     x-bind:class="active === 'service' ? 'active_link': '' "
-                    href="rate.html"
+                    href="./rate.html"
                     class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center"
                     >service rate</a
                   >
@@ -632,7 +630,7 @@
               >
                 <a
                   @click="nav = false"
-                  href="#"
+                  href="./about.html"
                   class="hover:text-white transition-all duration-300"
                   >About Us 2</a
                 >
@@ -2353,7 +2351,6 @@
     <div
       class="hidden left-0 bg-black/70 z-30 md:-z-10 animate-progress-90 animate-progress-95 animate-progress-100"
     ></div>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- wow js -->
     <script src="./js/wow.min.js"></script>
     <script>
@@ -2362,8 +2359,5 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/script.js"></script>
-    <script>
-      AOS.init();
-    </script>
   </body>
 </html>

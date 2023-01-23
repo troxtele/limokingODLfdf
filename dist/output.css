@@ -1585,6 +1585,18 @@ video {
   padding-top: 0.75rem;
 }
 
+.pb-\[5rem\] {
+  padding-bottom: 5rem;
+}
+
+.pt-\[8\.5rem\] {
+  padding-top: 8.5rem;
+}
+
+.pt-\[9rem\] {
+  padding-top: 9rem;
+}
+
 .text-center {
   text-align: center;
 }
