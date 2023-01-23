@@ -1509,6 +1509,11 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
 .pt-5 {
   padding-top: 1.25rem;
 }
@@ -2824,6 +2829,18 @@ main:hover .swiper-pagination {
 
   .md\:pt-0 {
     padding-top: 0px;
+  }
+
+  .md\:pt-\[9rem\] {
+    padding-top: 9rem;
+  }
+
+  .md\:pb-\[5rem\] {
+    padding-bottom: 5rem;
+  }
+
+  .md\:pb-20 {
+    padding-bottom: 5rem;
   }
 
   .md\:text-5xl {
