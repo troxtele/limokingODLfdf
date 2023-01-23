@@ -15,7 +15,7 @@
 }
 
 .container {
-  @apply max-w-[70rem] m-auto px-6;
+  @apply max-w-[72rem] m-auto px-6;
 }
 
 section {
