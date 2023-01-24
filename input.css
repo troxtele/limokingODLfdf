@@ -3,19 +3,15 @@
 @tailwind utilities;
 
 .active_link {
-  @apply border-default-color text-white;
+  @apply border-default-color;
 }
 
 .h_16 {
   @apply h-16;
 }
 
-[x-cloak] {
-  @apply hidden !important;
-}
-
 .container {
-  @apply max-w-[74rem] m-auto px-6;
+  @apply max-w-[70rem] m-auto px-6;
 }
 
 section {
@@ -27,20 +23,9 @@ img {
 }
 
 /*------========------INDEX PAGE------========------  */
-
-/* Nav Section */
-.nav ul li:hover > .submenu {
-  @apply opacity-100 visible;
-}
-
-.nav ul li:hover > a {
-  @apply text-zinc-100;
-}
 .car_overlay:hover .round_btn {
   @apply opacity-100;
 }
-
-/* Car slider section */
 
 .left_0 {
   @apply left-0;
@@ -61,7 +46,7 @@ main:hover .swiper-pagination {
   @apply opacity-100;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .next,
   .prev {
     @apply hidden;

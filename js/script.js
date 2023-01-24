@@ -19,7 +19,6 @@ let swiper = new Swiper(".main_slider", {
 let testimonial = new Swiper(".testi_slider", {
   speed: 500,
   loop: true,
-  rewind: true,
   navigation: {
     nextEl: ".testi_next",
     prevEl: ".testi_prev",
