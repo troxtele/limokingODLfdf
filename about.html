@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Fonts -->
-    <link rel=stylesheet
-    href='https://fonts.googleapis.com/css?family=Hind%3A300%2Cregular%2C500%2C600%2C700&amp;subset=latin-ext%2Cdevanagari%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
-    type=text/css media=all>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Montserrat Font -->
@@ -24,6 +21,12 @@
     <link rel=stylesheet
     href='https://fonts.googleapis.com/css?family=Mystery+Quest%3Aregular&amp;subset=latin-ext%2Clatin&amp;ver=84e558e18080ec9bc7458b79924cc3ab'
     type=text/css media=all>
+    <!-- Hind Font -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css?family=hind:300,400,500,600,700"
+      rel="stylesheet"
+    />
     <!-- Font awesome -->
     <link
       rel="stylesheet"
@@ -39,8 +42,8 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
-    <!-- AOS animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Anime JS -->
+    <link rel="stylesheet" href="./css/animate.css" />
     <!-- Main CSS -->
     <link rel="stylesheet" href="./dist/output.css" />
 
@@ -53,13 +56,16 @@
 
   <!-- Title -->
   <title>LimoKing</title>
-  <body x-data="{ navOpen: false }" class="text-slate-50 font-hind relative">
+  <body
+    x-data="{ navOpen: false }"
+    :class="navOpen ? 'overflow-hidden' : 'overflow-visible' "
+    class="text-slate-50 font-hind relative"
+  >
     <!----------------------------------------->
     <!----- Header Section ----->
     <!----------------------------------------->
     <header class="z-40 relative">
-      <!-- Header Top -->
-      <div class="header-top bg-default-black text-slate-50 py-2 md:py-8">
+      <div class="header bg-default-black text-slate-50 py-2 md:py-8">
         <div class="container">
           <div
             class="content py-2 flex flex-col-reverse md:grid md:grid-cols-3 justify-center items-center gap-10 md:gap-32 md:justify-end"
@@ -68,7 +74,7 @@
             <div
               class="hidden header-logo md:col-span-2 md:justify-self-end md:flex md:justify-center mr-10"
             >
-              <a href="#">
+              <a href="./index.html">
                 <img
                   class="max-w-[12rem]"
                   src="./images/header/logo.png"
@@ -78,9 +84,9 @@
             </div>
             <!-- Contact Info -->
             <div
-              class="contact-info w-full flex flex-col sm:flex-row md:flex-col justify-center gap-2 sm:gap-6 md:justify-between items-center md:items-end md:col-span-1"
+              class="contact-info w-full flex flex-col sm:flex-row md:flex-col gap:2 sm:gap-6 justify-center md:justify-between items-center md:items-end md:col-span-1"
             >
-              <div class="number flex items-center gap-4">
+              <div class="number flex justify-center items-center gap-4">
                 <span><img src="images/header/phone-icon.png" alt="" /></span>
                 <span>(1)-212-333-4343</span>
               </div>
@@ -96,78 +102,407 @@
       </div>
     </header>
     <!----------------------------------------->
-    <!----- Nav Section ----->
+    <!----- Nav Large Screen ----->
     <!----------------------------------------->
     <nav
-      class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-xl shadow-lg"
+      class="sticky top-0 md:bg-zinc-900/80 z-50 md:backdrop-blur-2xl shadow-lg"
     >
       <!-- Large Screen -->
       <div class="nav_large hidden md:block transition-all duration-500">
-        <div class="container flex justify-end">
-          <div class="flex gap-32 lg:gap-56 pt-5 text-zinc-300">
+        <div class="container flex justify-center lg:justify-end">
+          <div class="flex lg:gap-56 pt-5 text-zinc-300">
             <div class="nav uppercase font-medium text-sm">
               <ul
                 x-data="{active: 'about'}"
                 class="nav_links flex justify-center items-center lg:gap-5"
               >
-                <li class="flex justify-center items-center">
+                <li>
                   <a
                     x-on:click="active = 'home'"
                     x-bind:class="active === 'home' ? 'active_link': '' "
                     href="index.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >home</a
                   >
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- About Us -->
+                <li class="relative">
                   <a
                     x-on:click="active = 'about'"
                     x-bind:class="active === 'about' ? 'active_link': '' "
-                    href="about.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
-                    >about us</a
+                    href="./about.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
+                    >pages</a
                   >
+                  <!-- Sub menu -->
+                  <ul
+                    class="submenu absolute top-full bg-zinc-800 z-50 capitalize opacity-0 invisible transition-all duration-500"
+                  >
+                    <li>
+                      <a
+                        href="./about.html"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >About us</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="./about.html"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >About us 2</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >service</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >personal</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20 uppercase"
+                        >faq</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >contact page</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >gallery</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >404 page</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-slate-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        >testimonial</a
+                      >
+                    </li>
+                  </ul>
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Our fleet -->
+                <li class="relative">
                   <a
                     x-on:click="active = 'ourFeet'"
                     x-bind:class="active === 'ourFeet' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >our fleet</a
                   >
+                  <!-- Sub menu -->
+                  <ul
+                    class="submenu absolute top-full bg-zinc-800 z-50 capitalize opacity-0 invisible transition-all duration-500"
+                  >
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet 2 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet 3 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet 4 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20"
+                        >Fleet Modern 2 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-zinc-500/20 capitalize"
+                        >Fleet Modern 3 Columns</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        class="flex items-center pt-[1rem] pb-3 pl-4 w-[200px] text-zinc-300 transition-all duration-300 hover:text-zinc-100 leading-none hover:border-cyan-400/30 border-b border-transparent"
+                        >Fleet Modern 4 Columns</a
+                      >
+                    </li>
+                  </ul>
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Service rate -->
+                <li>
                   <a
                     x-on:click="active = 'serivce'"
                     x-bind:class="active === 'service' ? 'active_link': '' "
-                    href="rate.html"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    href="./rate.html"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >service rate</a
                   >
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Portfolio -->
+                <li class="relative">
                   <a
                     x-on:click="active = 'portfolio'"
                     x-bind:class="active === 'portfolio' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >portfolio</a
                   >
+                  <!-- Sub menu -->
+                  <div
+                    class="submenu capitalize p-6 absolute top-full -right-[154%] lg:-right-[309%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                  >
+                    <!-- Lists -->
+                    <div class="lists_container flex">
+                      <!-- List 1 -->
+                      <div class="sub_list flex flex-col gap-4 pr-6">
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Portfolio Classic</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 1 Column (Both Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 2 Columns (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 3 Columns</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 4 Columns</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 2 Columns, No Space</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 3 Columns, No Space</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 4 Columns, No Space</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Single</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- List 2 -->
+                      <div
+                        class="sub_list flex flex-col gap-4 pl-6 border-l-[1px] border-zinc-600/30"
+                      >
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Portfolio With Filter</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 1 Col With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 2 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 3 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Grid 4 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Modern 3 Cols With Filter</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Portfolio Modern 4 Cols With Filter</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </li>
-                <li class="flex justify-center items-center">
+                <!-- Blog -->
+                <li class="relative">
                   <a
                     x-on:click="active = 'blog'"
                     x-bind:class="active === 'blog' ? 'active_link': '' "
                     href="#"
-                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color"
+                    class="pb-4 px-5 transition-all duration-200 border-b-2 border-transparent hover:border-default-color flex justify-center items-center font-semibold"
                     >blog</a
                   >
+                  <!-- Sub menu -->
+                  <div
+                    class="submenu capitalize p-6 absolute top-full -right-[130%] lg:-right-[330%] bg-zinc-800 flex opacity-0 invisible transition-all duration-500"
+                  >
+                    <!-- Lists -->
+                    <div class="lists_container flex">
+                      <!-- List 1 -->
+                      <div class="sub_list flex flex-col gap-4 pr-6">
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Blog Column</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 1 Column (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 2 Columns (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 3 Columns</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 4 Columns</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                      <!-- List 2 -->
+                      <div
+                        class="sub_list flex flex-col gap-4 pl-6 border-l-[1px] border-zinc-600/30"
+                      >
+                        <a href="#" class="text-zinc-100 text-lg px-3"
+                          >Blog Masonry</a
+                        >
+                        <ul class="w-72 lg:w-96 text-zinc-300">
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 2 Columns – Masonry (Right Sidebar)</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 3 Columns – Masonry</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog 4 Columns – Masonry</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="#"
+                              class="flex w-full pb-[0.3rem] pt-2 hover:text-zinc-100 hover:bg-cyan-500/20 px-3 rounded-sm"
+                              >Blog Full</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </li>
               </ul>
             </div>
             <!-- Search Button -->
-            <div x-data="{ open: false }" class="search relative z-50">
+            <div
+              x-data="{ open: false }"
+              class="search hidden lg:inline-block relative z-50 text-white"
+            >
               <button x-on:click="open = !open" class="search_button">
                 <img
                   class="max-w-[1.3rem]"
@@ -189,72 +524,693 @@
           </div>
         </div>
       </div>
-
-      <!-- Nav Small Screen -->
-      <div class="md:hidden bg-default-black backdrop-blur-3xl">
-        <div class="container">
-          <div class="flex justify-between items-center py-3 sm:py-5">
-            <div class="nav_logo">
-              <img class="w-28" src="./images/header/logo.png" alt="logo" />
-            </div>
-            <div class="nav">
-              <!-- Nav btn -->
-              <div
-                @click="navOpen = !navOpen"
-                class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
-              >
-                <span class="line w-8 h-[3px] bg-slate-200"></span>
-                <span class="line h-[3px] bg-slate-200"></span>
-                <span class="line h-[3px] bg-slate-200"></span>
-              </div>
-              <!-- Nav links -->
-              <ul
-                x-bind:class="navOpen ? 'left_0' : '' "
-                class="nav_small absolute w-screen max-w-[70%] sm:max-w-[40%] px-4 py-4 h-screen -left-full top-full flex flex-col gap-4 bg-default-gray capitalize text-lg transition-all duration-700 ease-in-out"
-              >
-                <li><a href="index.html">home</a></li>
-                <li>
-                  <a
-                    @click="navOpen = false"
-                    href="about.html"
-                    class="border-bottom flex justify-between items-center border-b border-stone-900/50"
-                    ><span>about us</span
-                    ><i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    @click="navOpen = false"
-                    href="#"
-                    class="border-bottom flex justify-between items-center"
-                    ><span>our fleet</span>
-                    <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </li>
-                <li><a href="rate.html">service rate</a></li>
-                <li>
-                  <a
-                    @click="navOpen = false"
-                    href="#"
-                    class="border-bottom flex justify-between items-center"
-                    ><span>portfolio</span>
-                    <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    @click="navOpen = false"
-                    href="#"
-                    class="border-bottom flex justify-between items-center"
-                    ><span>blog</span> <i class="fa-solid fa-arrow-right"></i
-                  ></a>
-                </li>
-              </ul>
+    </nav>
+    <!----------------------------------------->
+    <!----- Sticky Nav Small Screen ----->
+    <!----------------------------------------->
+    <nav
+      class="md:hidden bg-default-black backdrop-blur-3xl sticky top-0 md:bg-zinc-900/80 z-30 md:backdrop-blur-xl shadow-lg"
+    >
+      <div class="container">
+        <div class="flex justify-between items-center py-3 sm:py-5">
+          <a href="./index.html" class="nav_logo">
+            <img class="w-28" src="./images/header/logo.png" alt="logo" />
+          </a>
+          <div class="nav">
+            <!-- Nav btn -->
+            <div
+              @click="navOpen = !navOpen"
+              class="nav_btn min-w-12 bg-default-gray p-2 h-full leading-none flex flex-col gap-[0.4rem] cursor-pointer"
+            >
+              <span class="line w-8 h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
+              <span class="line h-[3px] bg-slate-200"></span>
             </div>
           </div>
         </div>
       </div>
     </nav>
+
+    <!----------------------------------------->
+    <!----- Floating Nav options ----->
+    <!----------------------------------------->
+    <div
+      class="nav_small fixed top-0 left-0 bottom-0 w-64 sm:w-80 z-50 transition-all duration-500"
+      x-bind:class="navOpen ? 'visible ' : 'invisible' "
+      x-cloak
+    >
+      <!-- Cross Button -->
+      <div
+        x-on:click="navOpen = false "
+        :class="navOpen ? 'visible opacity-100 rotate-180' : 'invisible opacity-0' "
+        class="cross z-50 fixed top-6 right-4 font-bold text-white text-xl p-2 cursor-pointer transform duration-1000"
+      >
+        <i class="fa-solid fa-xmark text-xl"></i>
+      </div>
+      <!-- floating -->
+      <div
+        x-bind:class="navOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0' "
+        class="wrapper absolute top-0 left-0 bottom-0 overflow-auto transform transition-all duration-700 bg-default-small-nav w-64 sm:w-80 bg-zinc-800"
+      >
+        <div class="logo py-10 px-6 flex justify-between items-center">
+          <a href="./index.html">
+            <img class="w-[10rem] flex" src="./images/header/logo.png" alt="" />
+          </a>
+        </div>
+        <ul
+          class="text-white uppercase py-2 flex flex-col items-start bg-default-small-nav"
+        >
+          <!-- Home -->
+
+          <li
+            class="flex border-y-[1px] border-stone-600/20 py-2 w-full pl-4 uppercase"
+          >
+            <a
+              @click="nav = false"
+              href="./index.html"
+              class="hover:text-white transition-all duration-300"
+              >home</a
+            >
+          </li>
+
+          <!-- About -->
+          <li x-data="{open: false}" class="flex flex-col w-full">
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./about.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >pages</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >about us</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >About Us 2</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Personnel</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >faq</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Contact Page</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >gallery</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Testimonial</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- services -->
+          <li
+            class="flex border-y-[1px] border-stone-600/20 py-2 w-full pl-4 capitalize"
+          >
+            <a
+              @click="nav = false"
+              href="./rate.html"
+              class="hover:text-white transition-all duration-300 uppercase"
+              >service rates</a
+            >
+          </li>
+          <!-- Our Fleet -->
+          <li x-data="{open: false}" class="flex flex-col w-full">
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >Our Fleet</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+
+            <!-- Sub menu -->
+            <ul
+              :class="open ? 'max-h-[500px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-white transition-all duration-300"
+                  >Fleet 2 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="#"
+                  class="hover:text-white transition-all duration-300"
+                  >Fleet 3 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Fleet 4 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Modern 2 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Modern 3 Columns</a
+                >
+              </li>
+              <li
+                class="flex border-t-[1px] border-stone-600/20 py-2 w-full pl-5 capitalize"
+              >
+                <a
+                  @click="nav = false"
+                  href="./about.html"
+                  class="hover:text-white transition-all duration-300"
+                  >Modern 4 Columns</a
+                >
+              </li>
+            </ul>
+          </li>
+          <!-- Portfolio -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-y-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >portfolio</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+            <!-- Inner SubMenu -->
+            <ul
+              :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <!-- Portfolio Classic -->
+              <li
+                x-data="{open: false}"
+                class="capitalize border-b-[1px] border-stone-600/20"
+              >
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >portfolio classic</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 1 Column (Both Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Columns (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 3 Columns</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 4 Columns</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Columns, No Space</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 3 Columns, No Space</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 4 Columns, No Space</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Single</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >chooseus block</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <!-- portfolio with filter  -->
+              <li x-data="{open: false}" class="capitalize">
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >Portfolio With Filter</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 1 Col With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Columns (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 2 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 3 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Grid 4 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Modern 3 Cols With Filter</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Portfolio Modern 4 Cols With Filter</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <!-- blog -->
+          <li
+            x-data="{open: false}"
+            class="flex flex-col border-b-[1px] border-stone-600/20 w-full"
+          >
+            <!-- nav expand -->
+            <div class="flex justify-between items-center w-full px-4 py-2">
+              <a
+                @click="nav = false"
+                href="./index.html"
+                class="hover:text-white transition-all duration-300 w-full flex"
+                >blog</a
+              >
+              <!-- angle -->
+              <div
+                @click="open = !open"
+                class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+              >
+                <i
+                  :class="open ? 'rotate-90' : 'rotate-0' "
+                  class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-900/30 flex items-center justify-center h-7 w-7"
+                ></i>
+              </div>
+            </div>
+            <!-- Inner SubMenu -->
+            <ul
+              :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+              class="overflow-hidden transform transition-all duration-1000 bg-zinc-900/40"
+            >
+              <!-- list 1 -->
+              <li
+                x-data="{open: false}"
+                class="capitalize border-b-[1px] border-stone-600/20"
+              >
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >Blog Column</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 1 Column (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 2 Columns (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 3 Columns</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 4 Columns</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <!-- list 2 -->
+              <li x-data="{open: false}" class="capitalize">
+                <div class="flex justify-between items-center w-full px-4 py-2">
+                  <a
+                    @click="nav = false"
+                    href="./index.html"
+                    class="hover:text-white transition-all duration-300 w-full flex"
+                    >Blog Masonry</a
+                  >
+                  <!-- angle -->
+                  <div
+                    @click="open = !open"
+                    class="angle min-h-6 min-w-6 rounded-sm cursor-pointer"
+                  >
+                    <i
+                      :class="open ? 'rotate-90' : 'rotate-0' "
+                      class="fa-solid fa-angle-down transition-all duration-300 bg-zinc-700/50 flex items-center justify-center h-7 w-7"
+                    ></i>
+                  </div>
+                </div>
+                <!-- Inner Sub menu -->
+                <ul
+                  :class="open ? 'max-h-[1000px]' : 'max-h-0' "
+                  class="overflow-hidden transform transition-all duration-1000 bg-cyan-400/30"
+                >
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 2 Columns – Masonry (Right Sidebar)</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="#"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 3 Columns – Masonry</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog 4 Columns – Masonry</a
+                    >
+                  </li>
+                  <li
+                    class="flex border-t-[1px] border-zinc-500/30 py-2 w-full pl-5 capitalize"
+                  >
+                    <a
+                      @click="nav = false"
+                      href="./about.html"
+                      class="hover:text-white transition-all duration-300"
+                      >Blog Full</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
     <!----------------------------------------->
     <!----- Main Section ----->
     <!----------------------------------------->
@@ -262,7 +1218,7 @@
       class="cars bg-about-main-bg bg-cover bg-center bg-no-repeat h-[400px] text-slate-50 overflow-hidden -mt-[61px] flex items-end"
     >
       <div class="container">
-        <div class="cars_content flex flex-col items-center text-center">
+        <div class="cars_content flex flex-col items-center text-center mt-14">
           <div class="header">
             <h1 class="uppercase py-5 text-5xl font-bold">About limo king</h1>
           </div>
@@ -280,7 +1236,7 @@
     <!----------------------------------------->
     <!----- Story Section ----->
     <!----------------------------------------->
-    <section>
+    <section class="bg-[#F3F3F3]">
       <div class="container">
         <div
           class="content text-stone-800 grid md:grid-cols-2 justify-center items-center gap-6"
@@ -316,17 +1272,12 @@
     <!----------------------------------------->
     <!----- Service Section ----->
     <!----------------------------------------->
-    <div class="service_bottom py-10 text-gray-700">
+    <div class="service_bottom pt-6 py-14 text-gray-700">
       <div class="container">
         <div
           class="grid_items grid sm:grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-8"
         >
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
-          >
+          <div class="item flex gap-5 animated wow fadeInUp">
             <div class="icon">
               <img src="./images/service/service-icon-11.png" alt="icon" />
             </div>
@@ -344,12 +1295,7 @@
               >
             </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
-          >
+          <div class="item flex gap-5 animated wow fadeInUp">
             <div class="icon">
               <img src="./images/service/service-icon-21.png" alt="icon" />
             </div>
@@ -367,12 +1313,7 @@
               >
             </div>
           </div>
-          <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
-          >
+          <div class="item flex gap-5 animated wow fadeInUp">
             <div class="icon">
               <img src="./images/service/service-icon-31.png" alt="icon" />
             </div>
@@ -391,10 +1332,8 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
+            data-wow-duration="1.2s"
+            class="item flex gap-5 animated wow fadeInUp"
           >
             <div class="icon">
               <img src="./images/service/service-icon-41.png" alt="icon" />
@@ -414,10 +1353,8 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
+            data-wow-duration="1.2s"
+            class="item flex gap-5 animated wow fadeInUp"
           >
             <div class="icon">
               <img src="./images/service/service-icon-51.png" alt="icon" />
@@ -437,10 +1374,8 @@
             </div>
           </div>
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="item flex gap-5"
+            data-wow-duration="1.2s"
+            class="item flex gap-5 animated wow fadeInUp"
           >
             <div class="icon">
               <img src="./images/service/service-icon-61.png" alt="icon" />
@@ -468,7 +1403,7 @@
     <section class="bg-about-skill-bg bg-cover bg-center bg-no-repeat">
       <div class="container">
         <div
-          class="content py-6 grid grid-cols-1 sm:grid-cols-2 md:flex justify-between items-center gap-4"
+          class="content py-6 sm:py-10 grid grid-cols-1 sm:grid-cols-2 md:flex justify-between items-center gap-4"
         >
           <div
             class="item flex flex-col justify-center items-center gap-2 md:gap-6"
@@ -513,7 +1448,7 @@
     <!----- Progress Bar Section ----->
     <!----------------------------------------->
     <section>
-      <div class="container">
+      <div class="container py-6">
         <div
           class="content text-stone-700 grid md:grid-cols-2 justify-between items-center gap-8"
         >
@@ -613,10 +1548,7 @@
       <div class="about bg-default-color pt-6 md:pt-0">
         <div class="container">
           <div
-            data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000"
-            class="content flex flex-col md:flex-row items-center justify-between gap-4"
+            class="content animated wow fadeInUp flex flex-col md:flex-row items-center justify-between gap-4"
           >
             <h3 class="uppercase font-bold text-2xl text-center">
               what about pricing?
@@ -639,7 +1571,7 @@
     <section class="bg-default-black text-zinc-600">
       <div class="container">
         <div
-          class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 md:gap-4 text-zinc-300 font-monster"
+          class="content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-6 md:gap-4 text-zinc-300 font-monster"
         >
           <!-- About -->
           <div class="about">
@@ -650,7 +1582,7 @@
                 nascetur ridiculus mus. Morbi leo risus, porta
               </p>
               <div class="logo">
-                <a href="#">
+                <a href="./index.html">
                   <img class="w-40" src="./images/bottom/logo.png" alt="logo" />
                 </a>
               </div>
@@ -680,7 +1612,7 @@
                 <li>
                   <a href="#" class="flex gap-3 justify-start items-center"
                     ><i class="w-4 h-4 fa-regular fa-envelope"></i>
-                    <span>book@limokingtheme.com</span></a
+                    <span class="break-all">book@limokingtheme.com</span></a
                   >
                 </li>
               </ul>
@@ -844,15 +1776,17 @@
     <!-- overlay -->
     <div
       @click="navOpen = false"
-      x-bind:class="navOpen ? 'bg-black/70 z-30' : '-z-10'"
-      class="overlay absolute inset-0 transition-all duration-500"
+      x-bind:class="navOpen ? 'bg-black/70  visible backdrop-blur-md' : 'invisible backdrop-blur-0'"
+      class="overlay absolute inset-0 transition-all duration-500 z-40"
     ></div>
     <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Wow JS -->
+    <script src="./js/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Main JS -->
     <script src="./js/script.js"></script>
     <script src="./js/aboutPage.js"></script>
-    <script>
-      AOS.init();
-    </script>
   </body>
 </html>
